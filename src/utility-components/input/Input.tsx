@@ -1,8 +1,8 @@
-import { DetailedHTMLProps, InputHTMLAttributes } from 'react'
+import { DetailedHTMLProps, InputHTMLAttributes, forwardRef } from 'react'
 import './Input.css'
 
-function Input(props: DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>) {
-    return <input className='custom-input' {...props}/>
-}
+const Input = forwardRef<HTMLInputElement, DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>>((props, ref) => {
+    return <input className='custom-input' {...props} ref={ref}/>
+})
 
 export default Input
