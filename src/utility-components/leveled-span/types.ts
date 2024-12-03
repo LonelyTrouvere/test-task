@@ -6,6 +6,7 @@ type SpanLevels = typeof levels[number]
 export type Props = {
     children: ReactNode
     level: SpanLevels
+    style?: CSSProperties
 }
 
 type LevelStyles = Record<SpanLevels, CSSProperties>
@@ -14,16 +15,19 @@ export const levelStyles: LevelStyles = {
     first: {
         color: '#363A43',
         fontWeight: '600',
-        fontSize: '18px'
+        fontSize: '18px',
+        lineHeight: '24px'
     },
     second: {
         color: '#363A43',
         fontWeight: '500',
-        fontSize: '14px'
+        fontSize: '14px',
+        lineHeight: '24px'
     },
     third: {
         color: '#797E8B',
         fontWeight: '400',
-        fontSize: '12px'
+        fontSize: '12px',
+        lineHeight: '16px'
     }
 }
