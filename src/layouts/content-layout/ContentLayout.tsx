@@ -1,9 +1,15 @@
-import { ReactNode } from 'react'
+import { Children, ReactNode } from 'react'
 import './ContentLayout.css'
 
 function ContentLayout({children}: {children: ReactNode}) {
     return <div className="content-layout">
-        {children}
+        {
+            Children.map(children, child => (
+                <div className="content-row">
+                    {child}
+                </div>
+            ))
+        }
     </div>
 }
 
