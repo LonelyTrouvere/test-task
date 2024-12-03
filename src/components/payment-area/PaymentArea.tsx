@@ -11,10 +11,31 @@ function PaymentArea() {
                 <LeveledSpan level='second' style={{fontSize: '16px', lineHeight: '24px',}}>then 299.99 UAH per 14 days</LeveledSpan>
             </div>
             <div className="payment-area__card">
-                <LabeledInput label='card'>Card Number</LabeledInput>
+                <LabeledInput 
+                    label='card'
+                    inputProps={{
+                        placeholder: '1234 1234 1234 1234'
+                    }}
+                >
+                    Card Number
+                </LabeledInput>
                 <div className='payment-area__input-wrappers'>
-                    <LabeledInput label='month'>Expiration Date</LabeledInput>
-                    <LabeledInput label='cvc'>CVC</LabeledInput>
+                    <LabeledInput 
+                        label='month'
+                        inputProps={{
+                            placeholder: 'MM/YY'
+                        }}
+                    >
+                        Expiration Date
+                    </LabeledInput>
+                    <LabeledInput 
+                        label='cvc'
+                        inputProps={{
+                            placeholder: '• • •'
+                        }}
+                    >
+                        CVC
+                    </LabeledInput>
                 </div>
             </div>
         </div>
