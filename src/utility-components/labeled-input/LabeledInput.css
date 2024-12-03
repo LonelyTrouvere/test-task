@@ -1,0 +1,10 @@
+.custom-inputs-label {
+    font-family: Inter;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 16px;
+    color: #666C7B;
+    display: block;
+    margin-bottom: 4px;
+    flex: 1;
+}
