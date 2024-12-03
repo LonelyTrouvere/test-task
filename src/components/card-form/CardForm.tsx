@@ -3,7 +3,9 @@ import LabeledInput from "../../utility-components/labeled-input/LabeledInput";
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { FormInputs } from './type';
 function CardForm() {
-    const { register, handleSubmit, formState: { errors } } = useForm<FormInputs>();
+    const { register, handleSubmit, formState: { errors } } = useForm<FormInputs>({
+        shouldFocusError: false
+    });
     const onSubmit: SubmitHandler<FormInputs> = (data) => console.log(data)
 
     const cardRegister = register('card', {
@@ -21,6 +23,7 @@ function CardForm() {
             label='card'
             inputProps={{
                 placeholder: '1234 1234 1234 1234',
+                error: errors.card?.message,
                 ...cardRegister
             }}
             ref={cardRegister.ref}
@@ -32,7 +35,8 @@ function CardForm() {
                 label='date'
                 inputProps={{
                     placeholder: 'MM/YY',
-                    ...dateRegister
+                    error: errors.date?.message,
+                    ...dateRegister,
                 }}
                 ref={dateRegister.ref}
             >
@@ -42,14 +46,14 @@ function CardForm() {
                 label='cvc'
                 inputProps={{
                     placeholder: '• • •',
-                    ...cvcRegister
+                    error: errors.cvc?.message,
+                    ...cvcRegister,
                 }}
                 ref={cvcRegister.ref}
             >
                 CVC
             </LabeledInput>
             <button type='submit'>Submit</button>
-            {errors.card || errors.cvc || errors.date ? <span>loh</span> : <></>}
         </div>
     </form>
 }

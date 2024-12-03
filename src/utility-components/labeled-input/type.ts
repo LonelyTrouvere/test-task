@@ -1,7 +1,8 @@
-import { DetailedHTMLProps, InputHTMLAttributes, ReactNode } from "react"
+import { ReactNode } from "react"
+import { InputProps } from "../input/type"
 
 export type Props = {
     children: ReactNode
     label: string
-    inputProps: DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>
+    inputProps: InputProps
 }
