@@ -27,7 +27,6 @@ function StartTrialButton(props: ButtonProps) {
             transition: 'all 80ms ease-in',
             ...stateButtonStyle[mouseState],
         }}
-        disabled={clicked}
     >
         <LeveledSpan 
             level='first' 
