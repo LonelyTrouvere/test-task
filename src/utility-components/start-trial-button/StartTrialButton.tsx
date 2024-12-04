@@ -29,17 +29,57 @@ const stateButtonStyle: Record<MouseStates, CSSProperties> = {
 
 function StartTrialButton(props: ButtonProps) {
     const [mouseState, setMouseState] = useState<MouseStates>('neutral');
-    console.log(mouseState)
+    const [clicked, setClicked] = useState<boolean>(false)
+
     return <Button 
         className="start-trial-button"
         {...props}
         onMouseDown={() => setMouseState('down')}
-        onMouseUp={() => setMouseState('up')}
+        onMouseUp={() => {
+            setMouseState('up')
+            setClicked(true)
+        }}
         onMouseEnter={() => setMouseState('enter')}
         onMouseLeave={() => setMouseState('leave')}
-        style={stateButtonStyle[mouseState]}
+        style={{
+            transition: 'all 80ms ease-in',
+            ...stateButtonStyle[mouseState],
+        }}
     >
-        <LeveledSpan level='first' style={{fontSize: '16px', color: 'white'}}>Start Trial</LeveledSpan>
+        <LeveledSpan 
+            level='first' 
+            style={{
+                transition: 'all 120ms ease-out',
+                fontSize: '16px', 
+                color: 'white',
+                display: 'inline-block',
+                position: 'absolute',
+                left: 0,
+                right: 0,
+                marginInline: 'auto',
+                opacity: clicked ? 0 : 1,
+                bottom: clicked ? 'calc(25% + 2px)' : '25%'
+            }}
+        >
+            Start Trial
+        </LeveledSpan>
+        <LeveledSpan 
+            level='first' 
+            style={{
+                transition: 'all 120ms ease-out',
+                fontSize: '16px', 
+                color: 'white',
+                display: 'inline-block',
+                position: 'absolute',
+                left: 0,
+                right: 0,
+                marginInline: 'auto',
+                opacity: clicked ? 1 : 0,
+                bottom: clicked ? '25%' : 'calc(25% - 2px)'
+            }}
+        >
+            Proccesing payment
+        </LeveledSpan>
     </Button>
 }
 
