@@ -5,9 +5,5 @@
     bottom: 0px;
     cursor: pointer;
     transition: all 80ms ease-in;
-}
-
-.custom-button:hover {
     position: relative;
-    bottom: 2px;
 }
