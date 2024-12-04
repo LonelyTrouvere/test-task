@@ -5,7 +5,7 @@ import Divider from '../../utility-components/divider/Divider'
 function OrderArea() {
     return <div className="order-card">
         <LeveledSpan level="first">{'Order info <= 100 char.'}</LeveledSpan>
-        <div className="order-card__inner-wrapper">
+        <div className="order-card__main">
             <LeveledSpan level='second'>{'Description <= 400 char.'}</LeveledSpan>
             <Divider />
             <div>
@@ -14,7 +14,10 @@ function OrderArea() {
                 <LeveledSpan level='third'>Пудра для лица</LeveledSpan>
             </div>
             <Divider />
-            <LeveledSpan level="first" style={{textAlign: 'right'}}>Total 299.99 UAH</LeveledSpan>
+            <div className='order-card__total'>
+                <LeveledSpan level="first" style={{display: 'block', marginBottom: '8px'}}>5 days free</LeveledSpan>
+                <LeveledSpan level="second" style={{textAlign: 'right'}}>then 299.99 UAH per 14 days</LeveledSpan>
+            </div>
         </div>
     </div>
 }
