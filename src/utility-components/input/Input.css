@@ -11,3 +11,10 @@
     line-height: 24px;
     color: #666C7B;
 }
+
+.input-svg {
+    max-height: 18px;
+    position: relative;
+    bottom: 32px;
+    left: calc(100% - 30px);
+}

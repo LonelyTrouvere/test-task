@@ -4,6 +4,7 @@ import { SubmitHandler, useForm } from 'react-hook-form';
 import { FormInputs } from './type';
 import cardValidator from 'card-validator';
 import StartTrialButton from '../../utility-components/start-trial-button/StartTrialButton';
+import infoSvg from '../../assets/info.svg'
 
 // validates {number}{number}/{number}{number}
 const dateRegex = /^\d{2}\/\d{2}/
@@ -72,6 +73,7 @@ function CardForm() {
                     placeholder: '• • •',
                     error: errors.cvc?.message,
                     ...cvcRegister,
+                    svg: infoSvg
                 }}
                 ref={cvcRegister.ref}
             >
