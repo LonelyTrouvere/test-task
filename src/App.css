@@ -1,0 +1,16 @@
+#app {
+    font-family: "Inter", system-ui, Avenir, Helvetica, Arial, sans-serif;
+    max-width: 872px;
+    margin: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 64px;
+}
+  
+@media screen and (max-width: 999px) {
+    #app {
+        max-width: 420px;
+        gap: 32px;
+    }
+}

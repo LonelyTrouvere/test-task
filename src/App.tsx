@@ -1,3 +1,4 @@
+import './App.css'
 import Footer from "./components/footer/Footer"
 import Header from "./components/header/Header"
 import OrderArea from "./components/order-area/OrderArea"
@@ -8,12 +9,14 @@ function App() {
 
   return (
     <>
-        <Header />
-        <ContentLayout> 
-          <PaymentArea />
-          <OrderArea />
-        </ContentLayout>
-        <Footer />
+      <Header />
+      <div id='app'>
+          <ContentLayout> 
+            <PaymentArea />
+            <OrderArea />
+          </ContentLayout>
+          <Footer />
+      </div>
     </>
   )
 }
