@@ -12,9 +12,13 @@
     color: #666C7B;
 }
 
+.custom-input-wrapper {
+    position: relative;
+}
+
 .input-svg {
     max-height: 18px;
-    position: relative;
-    bottom: 32px;
-    left: calc(100% - 30px);
+    position: absolute;
+    right: 5%;
+    bottom: calc(100% - 28px);
 }

@@ -5,7 +5,7 @@ import { InputProps } from './type'
 const Input = forwardRef<HTMLInputElement, InputProps>((props, ref) => {
     const { error, svg } = props
     return (
-    <div>
+    <div className='custom-input-wrapper'>
         <input 
             className='custom-input'
             style={{
