@@ -36,7 +36,7 @@ function StartTrialButton(props: ButtonProps) {
                 bottom: clicked ? 'calc(25% + 2px)' : '25%'
             }}
         >
-            Start Trial
+            Pay 299.99 UAH
         </LeveledSpan>
         <LeveledSpan 
             level='first' 
