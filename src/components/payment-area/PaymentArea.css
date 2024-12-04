@@ -3,3 +3,9 @@
     flex-direction: column;
     gap: 8px;
 }
+
+.payment-area__payment {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
