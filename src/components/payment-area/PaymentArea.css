@@ -21,3 +21,9 @@
     flex-direction: column;
     gap: 16px;
 }
+
+@media screen and (max-width: 999px) {
+    .payment-area__order {
+        text-align: center;
+    }
+  }
