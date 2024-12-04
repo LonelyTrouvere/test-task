@@ -1,5 +1,5 @@
 import Footer from "./components/footer/Footer"
-import OrderCard from "./components/order-card/OrderCard"
+import OrderArea from "./components/order-area/OrderArea"
 import PaymentArea from "./components/payment-area/PaymentArea"
 import ContentLayout from "./layouts/content-layout/ContentLayout"
 
@@ -9,7 +9,7 @@ function App() {
     <>
         <ContentLayout> 
           <PaymentArea />
-          <OrderCard />
+          <OrderArea />
         </ContentLayout>
         <Footer />
     </>

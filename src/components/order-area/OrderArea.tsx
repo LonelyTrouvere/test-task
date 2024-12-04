@@ -1,8 +1,8 @@
-import './OrderCard.css'
+import './OrderArea.css'
 import LeveledSpan from "../../utility-components/leveled-span/LeveledSpan"
 import Divider from '../../utility-components/divider/Divider'
 
-function OrderCard() {
+function OrderArea() {
     return <div className="order-card">
         <LeveledSpan level="first">{'Order info <= 100 char.'}</LeveledSpan>
         <div className="order-card__inner-wrapper">
@@ -19,4 +19,4 @@ function OrderCard() {
     </div>
 }
 
-export default OrderCard
+export default OrderArea
