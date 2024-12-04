@@ -1,7 +1,8 @@
 import './Divider.css'
+import { DivProps } from './type'
 
-function Divider() {
-    return <div className="divider"></div>
+function Divider(props: DivProps) {
+    return <div className="divider" {...props}></div>
 }
 
 export default Divider

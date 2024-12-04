@@ -1,5 +1,5 @@
 .divider {
     height: 1px;
-    width: 100%;
     background-color: #E4E6EC;
+    display: inline-block;
 }

@@ -9,3 +9,15 @@
     flex-direction: column;
     gap: 24px;
 }
+
+.payment-area__divider-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.payment-area__card {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}

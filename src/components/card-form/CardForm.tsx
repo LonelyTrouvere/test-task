@@ -42,7 +42,7 @@ function CardForm() {
         }
     })
 
-    return  <form className="payment-area__card" onSubmit={handleSubmit(onSubmit)}>
+    return  <form className="payment-area__card-form" onSubmit={handleSubmit(onSubmit)}>
         <LabeledInput 
             label='card'
             inputProps={{
