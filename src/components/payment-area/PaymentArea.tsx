@@ -13,7 +13,7 @@ function PaymentArea() {
                 <LeveledSpan level='first' style={{fontSize: '32px', lineHeight: '40px', display: 'block'}}>5 days free</LeveledSpan>
                 <LeveledSpan level='second' style={{fontSize: '16px', lineHeight: '24px',}}>then 299.99 UAH per 14 days</LeveledSpan>
             </div>
-            <Button style={{color: 'white', backgroundColor: 'black'}}><img src={applePayLogo}/></Button>
+            <Button style={{color: 'white', backgroundColor: 'black'}} type='button'><img src={applePayLogo}/></Button>
             <div className='payment-area__card'>
                 <div className='payment-area__divider-wrapper'>
                     <Divider style={{width: '33%'}}/> 
