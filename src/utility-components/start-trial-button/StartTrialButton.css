@@ -1,0 +1,12 @@
+.start-trial-button {
+    background-color: hsl(144 97 27);
+}
+
+.start-trial-button:hover {
+    background-color: hsl(144 97 31);
+}
+
+.start-trial-button:active {
+    bottom: -4px;
+    background-color: hsl(144 97 23);
+}

@@ -3,6 +3,7 @@ import LabeledInput from "../../utility-components/labeled-input/LabeledInput";
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { FormInputs } from './type';
 import cardValidator from 'card-validator';
+import StartTrialButton from '../../utility-components/start-trial-button/StartTrialButton';
 
 // validates {number}{number}/{number}{number}
 const dateRegex = /^\d{2}\/\d{2}/
@@ -76,8 +77,8 @@ function CardForm() {
             >
                 CVC
             </LabeledInput>
-            <button type='submit'>Submit</button>
         </div>
+        <StartTrialButton type='submit'/>
     </form>
 }
 
