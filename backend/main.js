@@ -3,7 +3,7 @@ import fs from 'node:fs'
 import cors from '@fastify/cors'
 
 const fastify = Fastify({
-  logger: true
+  logger: true,
 })
 
 fastify.register(cors, {
@@ -15,10 +15,15 @@ fastify.get('/', function (request, reply) {
 })
 
 fastify.post('/', function (request, reply) {
-    fs.appendFileSync('data/data.txt', JSON.stringify(request.body));
-    reply.status(201).send({
-        success: true
+  fs.appendFileSync('data/data.txt', JSON.stringify(request.body));
+  if(request.body.card === '374245455400126'){
+    reply.status(400).send({
+      success: false
     })
+  }
+  reply.status(201).send({
+    success: true
+  })
 })
 
 fastify.listen({ port: 3000 }, function (err, address) {

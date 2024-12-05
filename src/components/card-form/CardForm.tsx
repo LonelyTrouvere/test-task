@@ -7,6 +7,7 @@ import StartTrialButton from '../../utility-components/start-trial-button/StartT
 import infoSvg from '../../assets/info.svg'
 import { useState } from 'react';
 import { payment } from '../../api/payment';
+import { sleep } from '../../utilities/sleep';
 
 // validates {number}{number}/{number}{number}
 const dateRegex = /^\d{2}\/\d{2}/
@@ -20,7 +21,15 @@ function CardForm() {
     });
     const onSubmit: SubmitHandler<FormInputs> = async (data) => {
         setinputSuccsessfull(true)
-        await payment(data)
+        // simulate heavy procces
+        await sleep(5000)
+        const response = await payment(data)
+        setinputSuccsessfull(false)
+        if(response.success){
+            alert('Payment successfull!')
+        } else {
+            alert('Server error occured')
+        }
     }
     
     const cardRegister = register('card', {
