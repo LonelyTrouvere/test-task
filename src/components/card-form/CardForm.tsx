@@ -18,6 +18,7 @@ function CardForm() {
         shouldFocusError: false
     });
     const onSubmit: SubmitHandler<FormInputs> = (data) => {
+        data
         setinputSuccsessfull(true)
     }
     const cardRegister = register('card', {
