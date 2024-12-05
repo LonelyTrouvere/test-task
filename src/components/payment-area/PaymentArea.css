@@ -26,4 +26,13 @@
     .payment-area__order {
         text-align: center;
     }
-  }
+}
+
+.payment-area__checkout {
+    position: relative;
+}
+
+.payment-area__arrow {
+    position: absolute;
+    left: -30px;
+}
