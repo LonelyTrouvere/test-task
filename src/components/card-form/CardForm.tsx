@@ -6,6 +6,7 @@ import cardValidator from 'card-validator';
 import StartTrialButton from '../../utility-components/start-trial-button/StartTrialButton';
 import infoSvg from '../../assets/info.svg'
 import { useState } from 'react';
+import { payment } from '../../api/payment';
 
 // validates {number}{number}/{number}{number}
 const dateRegex = /^\d{2}\/\d{2}/
@@ -17,9 +18,9 @@ function CardForm() {
     const { register, handleSubmit, formState: { errors } } = useForm<FormInputs>({
         shouldFocusError: false
     });
-    const onSubmit: SubmitHandler<FormInputs> = (data) => {
-        data
+    const onSubmit: SubmitHandler<FormInputs> = async (data) => {
         setinputSuccsessfull(true)
+        await payment(data)
     }
     
     const cardRegister = register('card', {

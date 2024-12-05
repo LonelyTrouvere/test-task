@@ -6,7 +6,6 @@ import PaymentArea from "./components/payment-area/PaymentArea"
 import ContentLayout from "./layouts/content-layout/ContentLayout"
 
 function App() {
-
   return (
     <>
       <Header />
