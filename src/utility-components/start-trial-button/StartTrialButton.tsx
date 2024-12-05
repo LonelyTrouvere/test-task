@@ -15,9 +15,7 @@ function StartTrialButton({success, ...props}: StartTrialButtonProps) {
         }}
         onMouseEnter={() => setMouseState('enter')}
         onMouseLeave={() => {
-            if(!success){
-                setMouseState('leave')
-            }
+            setMouseState('leave')
         }}
         style={{
             transition: 'all 80ms ease-in',
