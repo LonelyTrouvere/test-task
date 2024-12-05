@@ -18,8 +18,7 @@ function CardForm() {
         shouldFocusError: false
     });
     const onSubmit: SubmitHandler<FormInputs> = (data) => {
-        // checks wether exists at least one invalid field
-        setinputSuccsessfull(!Object.values(errors).some(item => item))
+        setinputSuccsessfull(true)
     }
     const cardRegister = register('card', {
         required: 'Credit card number required',
