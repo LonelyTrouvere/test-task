@@ -5,7 +5,6 @@ import LeveledSpan from '../leveled-span/LeveledSpan'
 
 function LanguagePicker() {
     const [pickedLanguage, setPickedLanguage] = useState<Languages>('Укр')
-    console.log(pickedLanguage)
     return <div className="language-picker">
         {
             languages.map(

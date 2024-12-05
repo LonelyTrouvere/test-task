@@ -5,6 +5,7 @@ import { FormInputs } from './type';
 import cardValidator from 'card-validator';
 import StartTrialButton from '../../utility-components/start-trial-button/StartTrialButton';
 import infoSvg from '../../assets/info.svg'
+import { useState } from 'react';
 
 // validates {number}{number}/{number}{number}
 const dateRegex = /^\d{2}\/\d{2}/
@@ -12,11 +13,14 @@ const dateRegex = /^\d{2}\/\d{2}/
 const cvcRegex = /^\d{3}$/
 
 function CardForm() {
+    const [inputSuccsessfull, setinputSuccsessfull] = useState<boolean>(false)
     const { register, handleSubmit, formState: { errors } } = useForm<FormInputs>({
         shouldFocusError: false
     });
-    const onSubmit: SubmitHandler<FormInputs> = (data) => console.log(data)
-
+    const onSubmit: SubmitHandler<FormInputs> = (data) => {
+        // checks wether exists at least one invalid field
+        setinputSuccsessfull(!Object.values(errors).some(item => item))
+    }
     const cardRegister = register('card', {
         required: 'Credit card number required',
         validate: (value) => {
@@ -80,7 +84,7 @@ function CardForm() {
                 CVC
             </LabeledInput>
         </div>
-        <StartTrialButton type='submit'/>
+        <StartTrialButton type='submit' success={inputSuccsessfull}/>
     </form>
 }
 

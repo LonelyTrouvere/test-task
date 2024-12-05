@@ -1,25 +1,21 @@
 import Button from "../button/Button"
-import { ButtonProps } from "../button/type"
 import LeveledSpan from "../leveled-span/LeveledSpan"
 import { useState } from 'react'
-import { MouseStates } from './type'
+import { MouseStates, StartTrialButtonProps } from './type'
 import { commonLabelStyle, stateButtonStyle } from './style'
 
-function StartTrialButton(props: ButtonProps) {
+function StartTrialButton({success, ...props}: StartTrialButtonProps) {
     const [mouseState, setMouseState] = useState<MouseStates>('neutral');
-    const [clicked, setClicked] = useState<boolean>(false)
-
     return <Button 
         className="start-trial-button"
         {...props}
         onMouseDown={() => setMouseState('down')}
         onMouseUp={() => {
             setMouseState('up')
-            setClicked(true)
         }}
         onMouseEnter={() => setMouseState('enter')}
         onMouseLeave={() => {
-            if(!clicked){
+            if(!success){
                 setMouseState('leave')
             }
         }}
@@ -27,13 +23,14 @@ function StartTrialButton(props: ButtonProps) {
             transition: 'all 80ms ease-in',
             ...stateButtonStyle[mouseState],
         }}
+        disabled={success}
     >
         <LeveledSpan 
             level='first' 
             style={{
                 ...commonLabelStyle,
-                opacity: clicked ? 0 : 1,
-                bottom: clicked ? 'calc(25% + 2px)' : '25%'
+                opacity: success ? 0 : 1,
+                bottom: success ? 'calc(25% + 2px)' : '25%'
             }}
         >
             Pay 299.99 UAH
@@ -42,8 +39,8 @@ function StartTrialButton(props: ButtonProps) {
             level='first' 
             style={{
                 ...commonLabelStyle,
-                opacity: clicked ? 1 : 0,
-                bottom: clicked ? '25%' : 'calc(25% - 2px)'
+                opacity: success ? 1 : 0,
+                bottom: success ? '25%' : 'calc(25% - 2px)'
             }}
         >
             Proccesing payment
