@@ -1,0 +1,14 @@
+.language-picker {
+    width: fit-content;
+}
+
+.language {
+    padding: 8px;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 999px) {
+    .not-picked-language {
+        display: none;
+    }
+}

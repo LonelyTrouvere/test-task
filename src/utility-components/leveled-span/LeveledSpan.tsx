@@ -1,12 +1,16 @@
-import { Props, levelStyles } from "./types"
+import { LeveledSpanProps, levelStyles } from "./types"
 
 
-function LeveledSpan({ level, children, style }: Props) {
-    return <span style={{
-        opacity: 1,
-        ...levelStyles[level],
-        ...style,
-    }}>{children}</span>
+function LeveledSpan({ level, children, style, ...rest }: LeveledSpanProps) {
+    return <span 
+        style={{
+            ...levelStyles[level],
+            ...style,
+        }}
+        {...rest}
+    >
+        {children}
+    </span>
 }
 
 export default LeveledSpan

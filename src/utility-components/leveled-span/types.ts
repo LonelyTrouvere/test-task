@@ -1,12 +1,10 @@
-import { CSSProperties, ReactNode } from "react"
+import { CSSProperties, DetailedHTMLProps, HTMLAttributes } from "react"
 
 export const levels = ['first', 'second', 'third'] as const
 
 type SpanLevels = typeof levels[number]
-export type Props = {
-    children: ReactNode
+export type LeveledSpanProps = DetailedHTMLProps<HTMLAttributes<HTMLSpanElement>, HTMLSpanElement> & {
     level: SpanLevels
-    style?: CSSProperties
 }
 
 type LevelStyles = Record<SpanLevels, CSSProperties>
