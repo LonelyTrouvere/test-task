@@ -21,6 +21,7 @@ function CardForm() {
         data
         setinputSuccsessfull(true)
     }
+    
     const cardRegister = register('card', {
         required: 'Credit card number required',
         validate: (value) => {
